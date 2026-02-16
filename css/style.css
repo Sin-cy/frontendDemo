@@ -420,6 +420,11 @@ nav {
         display: flex;
         align-items: center;
         z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-list * {
+        -webkit-tap-highlight-color: transparent;
     }
 
     .lang-list.is-open {
@@ -466,10 +471,21 @@ nav {
         line-height: 1;
         transition: none;
         opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: 0;
+    }
+
+    .sign-in-btn:active {
+        background: transparent;
     }
 
     .mobile-menu-toggle {
+        -webkit-appearance: none;
         appearance: none;
+        -webkit-tap-highlight-color: transparent;
         border: 0;
         background: transparent;
         display: inline-flex;
@@ -543,7 +559,7 @@ nav {
         height: auto;
         min-height: calc(100dvh - 45px);
         padding: 25px 0 24px;
-        background: #f2f2f2;
+        background: #ffffff;
         z-index: 1;
     }
 

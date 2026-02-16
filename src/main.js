@@ -119,9 +119,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const editorialDropdown = navTabs?.querySelector('.mobile-editorial-dropdown')
     const mobileQuery = window.matchMedia('(width <= 767px)')
     const langList = document.querySelector('.lang-list')
+    let lockedScrollY = 0
+    let isPageLocked = false
+    let pausedVideos = []
 
     if (!navContainer || !mobileToggle || !navTabs) {
         return
+    }
+
+    const lockPageScroll = () => {
+        if (isPageLocked) {
+            return
+        }
+
+        lockedScrollY = window.scrollY || window.pageYOffset || 0
+        document.body.style.position = 'fixed'
+        document.body.style.top = `-${lockedScrollY}px`
+        document.body.style.left = '0'
+        document.body.style.right = '0'
+        document.body.style.width = '100%'
+        document.body.style.overflow = 'hidden'
+        isPageLocked = true
+    }
+
+    const unlockPageScroll = () => {
+        if (!isPageLocked) {
+            return
+        }
+
+        const topValue = document.body.style.top
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.left = ''
+        document.body.style.right = ''
+        document.body.style.width = ''
+        document.body.style.overflow = ''
+        isPageLocked = false
+
+        const restoredY = topValue ? Math.abs(parseInt(topValue, 10)) : lockedScrollY
+        window.scrollTo(0, restoredY)
+    }
+
+    const pauseBackgroundVideos = () => {
+        pausedVideos = []
+
+        document.querySelectorAll('video').forEach((video) => {
+            if (video.paused || video.ended || video.readyState === 0) {
+                return
+            }
+
+            pausedVideos.push(video)
+            video.pause()
+        })
+    }
+
+    const resumeBackgroundVideos = () => {
+        pausedVideos.forEach((video) => {
+            const playPromise = video.play()
+
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {})
+            }
+        })
+
+        pausedVideos = []
+    }
+
+    const openMobileMenu = () => {
+        navContainer.classList.add('is-menu-open')
+        mobileToggle.setAttribute('aria-expanded', 'true')
+        lockPageScroll()
+        pauseBackgroundVideos()
     }
 
     const closeMobileMenu = () => {
@@ -129,6 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
         editorialDropdown?.classList.remove('is-open-mobile')
         editorialDropdown?.classList.remove('is-list-visible')
         mobileToggle.setAttribute('aria-expanded', 'false')
+        unlockPageScroll()
+        resumeBackgroundVideos()
     }
 
     mobileToggle.addEventListener('click', (event) => {
@@ -147,8 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
         editorialDropdown?.classList.remove('is-open-mobile')
         editorialDropdown?.classList.remove('is-list-visible')
 
-        const isOpen = navContainer.classList.toggle('is-menu-open')
-        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+        if (navContainer.classList.contains('is-menu-open')) {
+            closeMobileMenu()
+            return
+        }
+
+        openMobileMenu()
     })
 
     navTabs.addEventListener('click', (event) => {
