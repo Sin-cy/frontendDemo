@@ -1,0 +1,222 @@
+/* third section collection grid */
+
+.collection-grid-section {
+    /* background: #ffffff; */
+    padding: 24px 20px 60px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.collection-grid {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 68px;
+}
+
+.grid-card {
+    position: relative;
+    overflow: hidden;
+    background: none;
+}
+
+.grid-card-top {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
+}
+
+.grid-card-bottom {
+    aspect-ratio: 1 / 1;
+}
+
+.grid-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    inset: 0;
+}
+
+/* first grid block */
+.grid-media-base {
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* first grid block img and hover on video */
+.grid-media-hover {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Cards 2 and 3: stable layer behind base and hover */
+.grid-media-underlay {
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Keep underlay and hover perfectly aligned */
+.grid-card-2 .grid-media-reveal,
+.grid-card-3 .grid-media-reveal {
+    object-position: center 25%;
+}
+
+/* Cards 2 and 3: oversized base layer for smooth vertical slide */
+.grid-base-track {
+    position: absolute;
+    left: 0;
+    top: -18%;
+    width: 100%;
+    height: 136%;
+    z-index: 1;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.4s ease-in-out, opacity 0.28s ease-out 0.2s;
+}
+
+.grid-base-track-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+}
+
+
+.grid-title-1,
+.grid-title-2,
+.grid-title-3 {
+    font-family: "Hanken Grotesk", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 3;
+    font-weight: 900;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* Card 1: base image fades out to reveal hover video */
+    .grid-card-top:hover .grid-media-base {
+        opacity: 0;
+    }
+
+    /* Cards 2 and 3: base track slides down and fades into reveal layer */
+    .grid-card-2:hover .grid-base-track,
+    .grid-card-3:hover .grid-base-track {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: transform 0.3s ease-in-out, opacity 0.35s ease-out 0.08s;
+    }
+
+    .grid-card:hover .grid-media-hover {
+        opacity: 1;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .grid-media-base {
+        opacity: 1;
+    }
+
+    .grid-base-track {
+        opacity: 1;
+    }
+
+    .grid-media-hover {
+        display: none;
+        opacity: 0;
+    }
+}
+
+.grid-title-1 {
+    font-size: 60px;
+}
+
+.grid-title-2,
+.grid-title-3 {
+    font-size: 40px;
+}
+
+/* mid screens */
+@media (width < 1024px) {
+    .collection-grid {
+        gap: 68px;
+    }
+
+    .grid-title-1 {
+        font-size: 60px;
+        font-weight: 900;
+    }
+}
+
+/* mobile */
+@media (width < 768px) {
+    .collection-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .grid-card-top {
+        grid-column: 1 / -1;
+        aspect-ratio: 16 / 7;
+    }
+
+    .grid-card-bottom {
+        aspect-ratio: 1 / 1;
+    }
+
+    .grid-title-1 {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .grid-title-2,
+    .grid-title-3 {
+        font-size: 18px;
+        white-space: normal;
+        text-wrap: balance;
+        width: 78%;
+    }
+
+    .grid-card .grid-media {
+        transform-origin: center;
+        object-position: center 50%;
+    }
+
+    .grid-card-top .grid-media {
+        transform: scale(1.15);
+        object-position: center 52%;
+    }
+
+    .grid-card-2 .grid-media {
+        transform: scale(1.2);
+        object-position: center 60%;
+    }
+
+    .grid-card-2 .grid-base-track-image {
+        object-position: center 60%;
+        transform: scale(1.2);
+    }
+
+    .grid-card-3 .grid-media {
+        transform: scale(1.22);
+        object-position: center 60%;
+    }
+
+    .grid-card-3 .grid-base-track-image {
+        object-position: center 60%;
+        transform: scale(1.22);
+    }
+
+}

@@ -1,0 +1,107 @@
+/* ---------- header logo ----------- */
+.header-container {
+    font-family: "Hanken Grotesk", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    height: 215px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+    /* margin-top: 35px; */
+    padding: 16px 20px 0px 20px;
+    background: transparent;
+    isolation: isolate;
+    overflow: visible;
+    transition: background 0.3s ease, height 0.3s ease, padding 0.3s ease;
+    mix-blend-mode: difference;
+    /* background: darkblue; */
+}
+
+.main-el {
+    margin-top: 0;
+}
+
+.main-logo {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    /* filter: invert(var(--value, 100%)); */
+    mix-blend-mode: difference;
+    will-change: transform;
+}
+
+/* shrinking logo on scroll ? */
+.header-container.shrunk {
+    height: 100px;  /* Smaller height */
+    padding-top: 50px;
+    transition: 0.2s ease, padding 0.3s ease;
+    /* filter: invert(var(--value, 100%)); */
+    mix-blend-mode: difference;
+}
+
+.header-container.shrunk .main-logo {
+    transform: scale(0.22);  /* Shrink logo, transition for smooth */
+    transition: transform 0.7s ease-in;
+    transform-origin: top center;
+    filter: brightness(0) invert(1);
+    mix-blend-mode: difference;
+}
+
+@media (width <= 767px) {
+    .header-container {
+        padding: 16px 14px 0 14px;
+        margin-top: 0px;
+    }
+
+    .main-logo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (width <= 450px) {
+    .header-container {
+        height: 215px;
+        padding: 16px 7px 0 7px;
+        margin-top: 22px;
+    }
+
+    .header-container.shrunk {
+        height: 215px;
+        padding-top: 16px;
+    }
+
+    .main-logo,
+    .header-container.shrunk .main-logo {
+        transform: none;
+        transition: none;
+        filter: brightness(0) invert(1);
+        mix-blend-mode: difference;
+    }
+}
+
+
+@media (width < 391px) {
+    .header-container {
+        height: 215px;
+        padding: 16px 7px 0 7px;
+        margin-top: 22px;
+    }
+
+    .header-container.shrunk {
+        height: 215px;
+        padding-top: 16px;
+    }
+
+    .main-logo,
+    .header-container.shrunk .main-logo {
+        transform: none;
+        transition: none;
+        filter: brightness(0) invert(1);
+        mix-blend-mode: difference;
+    }
+}

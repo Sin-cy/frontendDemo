@@ -1,0 +1,82 @@
+.scrolling-text {
+    --scroll-duration: 20s;
+    --strip-height: 85px;
+    --text-size: 60px;
+    --text-weight: 900;
+    --arrow-size: 85px;
+    --icon-text-gap: 95px;
+    --between-pairs-gap: 110px;
+    --wrap-gap: 110px;
+    --text-side-pad: 2px;
+
+    background: #000;
+    overflow: hidden;
+    overflow-x: clip;
+    width: 100%;
+    height: var(--strip-height);
+    contain: inline-size;
+}
+
+.scrolling-text-belt {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scrolling-text-marquee var(--scroll-duration) linear infinite;
+    will-change: transform;
+    gap: var(--wrap-gap);
+}
+
+.scrolling-text-sequence {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0;
+}
+
+.scrolling-text-unit {
+    display: flex;
+    align-items: center;
+    gap: var(--icon-text-gap);
+}
+
+.scrolling-text-unit + .scrolling-text-unit {
+    margin-left: var(--between-pairs-gap);
+}
+
+.scrolling-text-item {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: var(--text-size);
+    font-weight: var(--text-weight);
+    line-height: 1;
+    color: #ffffff;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-inline: var(--text-side-pad);
+}
+
+.scrolling-text-arrow {
+    display: block;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    flex-shrink: 0;
+}
+
+@keyframes scrolling-text-marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (width < 768px) {
+    .scrolling-text {
+        --scroll-duration: 9s;
+        --strip-height: 85px;
+        --text-size: 24px;
+        --text-weight: 900;
+        --arrow-size: 85px;
+        --icon-text-gap: 20px;
+        --between-pairs-gap: 20px;
+        --wrap-gap: 20px;
+        --text-side-pad: 1px;
+    }
+}

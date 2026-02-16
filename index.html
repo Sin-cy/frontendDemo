@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>demo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link href="css/global.css" rel="stylesheet">
+        <link href="css/logo_header.css" rel="stylesheet">
+
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/section_NEW_and_BESTSELLER.css" rel="stylesheet">
+
+        <link href="css/grid_section.css" rel="stylesheet">
+        <link href="css/scrolling_text.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <div class="lang-list">
+                    <span class="lang-text">TH - THB</span>
+
+                    <img class="lang-dropdown-icon" src="./public/icons/polygon-arrow.svg" alt="Arrow Dropdown" >
+
+                    <ul class="lang-dropdown-menu" role="listbox">
+                        <li class="lang-dropdown-item" data-type="us-usd">US - USD</li>
+                    </ul>
+                </div>
+
+                <!-- mobile responsive -->
+                <button
+                    class="mobile-menu-toggle"
+                    type="button"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-mobile-nav">
+                    <span class="mobile-menu-line menu-line-top" aria-hidden="true"></span>
+                    <span class="mobile-menu-line menu-line-bottom" aria-hidden="true"></span>
+                    <span class="mobile-close-line close-line-a" aria-hidden="true"></span>
+                    <span class="mobile-close-line close-line-b" aria-hidden="true"></span>
+                </button>
+
+                <div class="nav-tabs" id="primary-mobile-nav">
+                    <a class="tab" href="#">WOMEN</a>
+                    <a class="tab" href="javascript:void(0)">COLLECTIONS</a>
+
+
+                    <!-- TODO: Add dropdown effect for EDITORIAL --> 
+                    <div class="dropdown mobile-editorial-dropdown">
+                        <a class="tab dropdown-tab mobile-editorial-trigger" href="#">
+                            <span class="mobile-editorial-label">EDITORIAL</span>
+                            <img class="mobile-editorial-arrow" src="./public/icons/polygon-arrow.svg" alt="">
+                        </a>
+                        <div class="overlay"></div>
+                        <div class="dropdown-menu mobile-editorial-menu">
+                            <ul class="mobile-editorial-list">
+                                <li><a class="editorial-items mobile-editorial-link" href="#" id="href">A.S.C</a></li>
+                                <li><a class="editorial-items mobile-editorial-link" href="#" id="href">BAZAAR</a></li>
+                                <li><a class="editorial-items mobile-editorial-link" href="#" id="href">ELLE</a></li>
+                                <li><a class="editorial-items mobile-editorial-link" href="#" id="href">GQ</a></li>
+                                <li class="mobile-editorial-item"><a class="editorial-items mobile-editorial-link" href="#" id="href">L'OFFICIAL THAILAND</a></li>
+                                <li class="mobile-editorial-item"><a class="editorial-items mobile-editorial-link" href="#" id="href">NUMERO</a></li>
+                                <li class="mobile-editorial-item"><a class="editorial-items mobile-editorial-link" href="#" id="href">VOGUE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <a class="tab" href="javascript:void(0)">NEWS</a>
+                    <a class="tab" href="javascript:void(0)">STORIES</a>
+
+                    <!-- NOTE: mobile menu logo pinned to the bottom -->
+                    <div class="mobile-menu-bottom-logo" aria-hidden="true">
+                        <img
+                            class="mobile-menu-bottom-logo-img"
+                            src="./public/icons/plaimanas-logo.svg"
+                            alt="Main Logo">
+                    </div>
+
+                </div>
+
+                <div class="signin-shop-container">
+                    <!-- sign in maybe a button -->
+                    <button class="sign-in-btn">
+                        SIGN IN
+                    </button>
+                    <img src="./public/icons/shopping-bag-icon.svg"
+                         alt="Shopping Bag">
+                </div>
+            </div>
+        </nav>
+
+        <header class="header-container">
+            <img class="main-logo" src="./public/icons/plaimanas-logo.svg" alt="Main Logo">
+        </header>
+
+        <main class="main-el">
+            <div class="media-is-bg" data-type="video"
+                data-src="./public/videos/hero_video.mp4" data-class="hero-bg">
+            </div>
+
+            <!-- NEW item section -->
+                <div class="new-item-container">
+                    <div class="inner-new-wrapper">
+                        <p class="sticky-new-txt">NEW</p>
+                        <img class="new-bg" src="./public/images/new_bg.svg" alt="New Section Background">
+                    </div>
+
+                    <div class="txt-container">
+                        <p class="txt-subtitle">Sed egestas, nibh a condimentum imperdiet</p> 
+                        <p class="txt-desc">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Nam ornare, nisl non rhoncus
+                        commodo, turpis elit ultricies justo, vitae molestie quam justo
+                        ut lacus. Proin vitae
+                        </p>
+                    </div>
+
+                    <div class="sticky-extension"></div>
+                </div>
+
+                <!-- Bestseller Section -->
+                <div class="bestseller-container">
+                    <div class="inner-bestseller-wrapper">
+                        <p class="sticky-bestseller-txt">BESTSELLER</p>
+
+                        <div class="media-is-bg"
+                            data-src="./public/videos/DTS_THE_LEADER_Joey_Bania_Clips_ID10.mp4"
+                            data-type="video" data-class="bestseller-bg">
+                        </div>
+                        <!-- <div class="media-is-bg" -->
+                        <!--     data-src="./public/images/DTS_THE_LEADER_Joey_Bania_Clips_ID10.svg" -->
+                        <!--     data-type="image" data-class="bestseller-bg"> -->
+                        <!-- </div> -->
+
+                    </div>
+
+                    <div class="txt-container">
+                        <p class="txt-subtitle">Sed egestas, nibh a condimentum imperdiet</p> 
+                        <p class="txt-desc">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Nam ornare, nisl non rhoncus
+                        commodo, turpis elit ultricies justo, vitae molestie quam justo
+                        ut lacus. Proin vitae
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- grid third section -->
+                <section class="collection-grid-section">
+                    <div class="collection-grid">
+
+                        <!-- top wide tile -->
+                        <article class="grid-card grid-card-top">
+                            <img
+                                class="grid-media grid-media-base"
+                                src="./public/images/DTS_Feel_Alive_Brenna_Marrie_ID665.jpg"
+                                alt="Collection 01">
+                            <video
+                                class="grid-media grid-media-hover"
+                                src="./public/videos/Grid_DTS_THE_LEADER_Joey_Bania_Clips_ID11.mp4"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                                preload="metadata"
+                                aria-hidden="true">
+                            </video>
+                            <h3 class="grid-title-1">COLLECTION 01</h3>
+                        </article>
+
+                        <!-- bottom left square tile -->
+                        <article class="grid-card grid-card-bottom grid-card-2">
+                            <img
+                                class="grid-media grid-media-underlay grid-media-reveal"
+                                src="./public/images/DTS_Misc_1_Nick_Fancher_ID6828.jpg"
+                                alt=""
+                                aria-hidden="true">
+                            <div class="grid-base-track" aria-hidden="true">
+                                <img
+                                    class="grid-base-track-image"
+                                    src="./public/images/DTS_Teeth_Gedvile_TAMOSIUNAITE_ID11034.jpg"
+                                    alt="">
+                            </div>
+                            <img
+                                class="grid-media grid-media-hover grid-media-reveal"
+                                src="./public/images/DTS_Misc_1_Nick_Fancher_ID6828.jpg"
+                                alt="Collection 02 hover"
+                                aria-hidden="true">
+                            <h3 class="grid-title-2">COLLECTION 02</h3>
+                        </article>
+
+                        <!-- bottom right square tile -->
+                        <article class="grid-card grid-card-bottom grid-card-3">
+                            <img
+                                class="grid-media grid-media-underlay grid-media-reveal"
+                                src="./public/images/DTS_Misc_1_Nick_Fancher_ID6828.jpg"
+                                alt=""
+                                aria-hidden="true">
+                            <div class="grid-base-track" aria-hidden="true">
+                                <img
+                                    class="grid-base-track-image"
+                                    src="./public/images/DTS_DEEP_SPA_DTS_ID10968.jpg"
+                                    alt="">
+                            </div>
+                            <img
+                                class="grid-media grid-media-hover grid-media-reveal"
+                                src="./public/images/DTS_Misc_1_Nick_Fancher_ID6828.jpg"
+                                alt="Collection 03 hover"
+                                aria-hidden="true">
+                            <h3 class="grid-title-3">COLLECTION 03</h3>
+                        </article>
+
+                    </div>
+                </section>
+
+
+                <!-- scrolling text section -->
+                <section class="scrolling-text" aria-label="Scrolling promotional text">
+                    <div class="scrolling-text-belt">
+                        <div class="scrolling-text-sequence" aria-hidden="true">
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-right.svg" alt="">
+                                <span class="scrolling-text-item">NEW ARRIVAL</span>
+                            </div>
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-left.svg" alt="">
+                                <span class="scrolling-text-item">BEST SELLING</span>
+                            </div>
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-right.svg" alt="">
+                                <span class="scrolling-text-item">NEW ARRIVAL</span>
+                            </div>
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-left.svg" alt="">
+                                <span class="scrolling-text-item">BEST SELLING</span>
+                            </div>
+                        </div>
+                        <div class="scrolling-text-sequence" aria-hidden="true">
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-right.svg" alt="">
+                                <span class="scrolling-text-item">NEW ARRIVAL</span>
+                            </div>
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-left.svg" alt="">
+                                <span class="scrolling-text-item">BEST SELLING</span>
+                            </div>
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-right.svg" alt="">
+                                <span class="scrolling-text-item">NEW ARRIVAL</span>
+                            </div>
+                            <div class="scrolling-text-unit">
+                                <img class="scrolling-text-arrow" src="./public/images/pixelarticons-arrow-left.svg" alt="">
+                                <span class="scrolling-text-item">BEST SELLING</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="height: 800px; background: lightgray;">Scroll down to test sticky nav!</div>
+                <section class="hero-section light-bg" style="height: 800px; background: white;">
+                    Hero content here
+                </section>
+                <section class="dark-section dark-bg" style="height: 800px; background: black; color: white;">
+                    Dark content
+                </section>
+                <section class="light-section light-bg" style="height: 800px; background: white;">
+                    Back to light
+                </section>
+
+
+                <form>
+                    <a href="#top" aria-label="Back to top"></a>
+                </form>
+
+                <footer class="footer">
+
+                    <div class="footer-subsection-container">
+                        <div class="footer-subsection">
+                            <p class="footer-heads">ABOUT</p>
+                            <div class="footer-list">
+                                <a class="footer-list-items" href="javascript:void(0)">Women</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Collections</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Editorial</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Stories</a>
+                            </div>
+                        </div>
+
+                        <div class="footer-subsection"> 
+                            <p class="footer-heads">HELP</p>
+                            <div class="footer-list">
+                                <a class="footer-list-items" href="javascript:void(0)">Payment Notification</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Customer Service</a>
+                                <a class="footer-list-items" href="javascript:void(0)">FAQ</a>
+                            </div>
+                        </div>
+
+                        <div class="footer-subsection">
+                            <p class="footer-heads">SOCIAL</p>
+                            <div class="footer-list">
+                                <a class="footer-list-items" href="javascript:void(0)">Instagram</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Facebook</a>
+                            </div>
+                        </div>
+
+                        <div class="footer-subsection"> 
+                            <p class="footer-heads">LEGAL</p>
+                            <div class="footer-list">
+                                <a class="footer-list-items" href="javascript:void(0)">Terms & Conditions</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Privacy Policy</a>
+                                <a class="footer-list-items" href="javascript:void(0)">Cookies Policy</a>
+                            </div>
+                        </div>
+
+                        <div class="footer-newsletter"> 
+                            <p class="footer-heads">NEWSLETTER</p>
+                            <div class="footer-newsletter-container">
+                                <input class="email-input" readonly="readonly" type="text" name="Email" placeholder="Email">
+                                <button class="subscribe-btn" type="">SUBSCRIBE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer-copyright">
+                        <p>©PLAIMANAS</p>
+                        <p>Web by ::*</p>
+                    </div>
+                </footer>
+
+        </main>
+    </body>
+    <script src="src/main.js"></script>
+    <script src="src/mediaChecker.js"></script>
+</html>

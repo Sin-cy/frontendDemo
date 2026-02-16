@@ -1,0 +1,229 @@
+/* --------- second content section NEW ------------ */
+
+.new-item-container {
+    display: flex; /* Flex for centering the wrapper in the section */
+    justify-content: center; /* Horizontal */
+    align-items: center; /* Vertical */
+    position: relative;
+    min-height: 80vh; /* Ensures section fills viewport if needed */
+    height: 572px; /* Your fixed height; increase to 2000px for testing longer scrolls */
+    background: white;
+    overflow: visible; /* No clipping needed */
+
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inner-new-wrapper {
+    display: grid;
+    place-items: center;
+    width: 50vw;
+    max-width: 566px; /* adjust bg new image size */
+    aspect-ratio: 566 / 572;
+    position: relative;
+}
+
+.sticky-new-txt {
+    position: sticky;
+    top: 25vh; /* stick duration in viewport before moving */
+    transform: translateY(1%);
+    grid-area: 1 / 1; /* Overlays on image */
+    text-align: center; /* Optional: Ensures text content itself is centered if multi-word; remove if Figma shows left-justified */
+    display: inline-block;
+    margin: 0;
+    z-index: 30;
+    color: white;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    width: fit-content;
+    background-color: transparent;
+    line-height: 1; /* Tightens vertical spacing for better centering on image content */
+}
+
+.new-bg {
+    grid-area: 1 / 1; /* Overlays with text */
+    width: 100%; /* Fills wrapper */
+    height: 100%; /* Fills wrapper */
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* --------- third content section BESTSELLER ------------ */
+
+.bestseller-container {
+    display: flex; /* Flex for centering the wrapper in the section */
+    justify-content: center; /* Horizontal */
+    align-items: center; /* Vertical */
+    position: relative;
+    min-height: 80vh; /* Ensures section fills viewport if needed */
+    height: 572px; /* Your fixed height; increase to 2000px for testing longer scrolls */
+    background: white;
+    overflow: visible; /* No clipping needed */
+
+    flex-direction: column;
+    /* TODO: It might be pushed by the testing sections */
+    gap: 20px;
+}
+
+.inner-bestseller-wrapper {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 1352px; /* adjust bg new image size */
+    aspect-ratio: 1352 / 760;
+    position: relative;
+    padding: 0px 37px 0px 37px;
+}
+
+.sticky-bestseller-txt {
+    position: sticky;
+    top: 33vh; /* stick duration in viewport before moving */
+    transform: translateY(1%);
+    grid-area: 1 / 1; /* Overlays on image */
+    text-align: center; /* Optional: Ensures text content itself is centered if multi-word; remove if Figma shows left-justified */
+    display: inline-block;
+    margin: 0;
+    z-index: 30;
+    color: white;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    width: fit-content;
+    background-color: transparent;
+    line-height: 1; /* Tightens vertical spacing for better centering on image content */
+}
+
+.bestseller-bg {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* -------- text description container ---------- */
+.txt-container, .new-item-container, .bestseller-container {
+    flex-direction: column;
+}
+
+.txt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 715px;
+    gap: 10px;
+    transition: opacity 0.35s ease-in-out;
+    cursor: default;
+}
+.txt-container:hover {
+    opacity: 50%;
+}
+
+.txt-subtitle, .txt-desc {
+    margin: 0;
+}
+
+.txt-subtitle {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.txt-desc {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    width: 647px;
+}
+
+@media (width <= 767px) {
+    .new-item-container {
+        /* min-height: 50vh; */
+        justify-content: flex-start;
+        height: auto;
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 85px;
+    }
+
+    .inner-new-wrapper {
+        width: auto;
+        max-width: 282px; /* adjust bg new image size */
+        aspect-ratio: 282 / 286;
+    }
+
+    .sticky-new-txt {
+        top: 19vh;
+    }
+
+    .bestseller-container {
+        min-height: 0;
+        height: auto;
+    }
+
+    .inner-bestseller-wrapper {
+        max-width: 1352px;
+        aspect-ratio: 1352 / 760;
+        position: relative;
+        padding: 0px 21px 0px 21px;
+    }
+
+    .sticky-bestseller-txt {
+        top: 13.5vh;
+    }
+
+    .sticky-new-txt,
+    .sticky-bestseller-txt {
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 40px;
+        font-weight: 900;
+    }
+
+    .txt-container {
+        width: 100%;
+        max-width: 715px;
+        padding-inline: 16px;
+    }
+
+    .txt-subtitle, .txt-desc {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .txt-subtitle {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .txt-desc {
+        font-size: 12px;
+        font-weight: 400;
+        /* width: 100%; */
+        /* max-width: none; */
+    }
+
+    .new-item-container .txt-container {
+        width: 342px;
+        padding-inline: 0;
+        align-items: center;
+    }
+
+    .bestseller-container .txt-container {
+        width: 346px;
+        padding-inline: 0;
+        align-items: center;
+    }
+
+    .new-item-container .txt-subtitle,
+    .new-item-container .txt-desc,
+    .bestseller-container .txt-subtitle,
+    .bestseller-container .txt-desc {
+        width: 100%;
+        text-align: center;
+    }
+}
