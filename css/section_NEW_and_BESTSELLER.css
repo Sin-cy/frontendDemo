@@ -1,15 +1,17 @@
 /* --------- second content section NEW ------------ */
 
 .new-item-container {
-    display: flex; /* Flex for centering the wrapper in the section */
-    justify-content: center; /* Horizontal */
-    align-items: center; /* Vertical */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
-    min-height: 80vh; /* Ensures section fills viewport if needed */
-    height: 572px; /* Your fixed height; increase to 2000px for testing longer scrolls */
+    height: auto;
+    min-height: auto;
     background: white;
-    overflow: visible; /* No clipping needed */
+    overflow: visible;
 
+    padding-top: 100px;
+    padding-bottom: 100px;
     flex-direction: column;
     gap: 20px;
 }
@@ -25,7 +27,7 @@
 
 .sticky-new-txt {
     position: sticky;
-    top: 25vh; /* stick duration in viewport before moving */
+    top: 240px; /* stick duration in viewport before moving */
     transform: translateY(1%);
     grid-area: 1 / 1; /* Overlays on image */
     text-align: center; /* Optional: Ensures text content itself is centered if multi-word; remove if Figma shows left-justified */
@@ -59,29 +61,32 @@
     justify-content: center; /* Horizontal */
     align-items: center; /* Vertical */
     position: relative;
-    min-height: 80vh; /* Ensures section fills viewport if needed */
-    height: 572px; /* Your fixed height; increase to 2000px for testing longer scrolls */
+    /* min-height: 80vh; */
+    /* height: 572px; */
     background: white;
+    min-height: 0;
+    height: auto;
     overflow: visible; /* No clipping needed */
 
-    flex-direction: column;
     /* TODO: It might be pushed by the testing sections */
     gap: 20px;
+    flex-direction: column;
 }
 
 .inner-bestseller-wrapper {
     display: grid;
     place-items: center;
     width: 100%;
-    max-width: 1352px; /* adjust bg new image size */
-    aspect-ratio: 1352 / 760;
+    max-width: 1200px; /* adjust bg new image size */
+    aspect-ratio: 1200 / 759;
     position: relative;
-    padding: 0px 37px 0px 37px;
+    /* padding: 0px 37px 0px 37px; */
+    object-fit: cover;
 }
 
 .sticky-bestseller-txt {
     position: sticky;
-    top: 33vh; /* stick duration in viewport before moving */
+    top: 330px; /* stick duration in viewport before moving */
     transform: translateY(1%);
     grid-area: 1 / 1; /* Overlays on image */
     text-align: center; /* Optional: Ensures text content itself is centered if multi-word; remove if Figma shows left-justified */
@@ -118,6 +123,7 @@
     flex-direction: column;
     align-items: center;
     width: 715px;
+    height: 64px;
     gap: 10px;
     transition: opacity 0.35s ease-in-out;
     cursor: default;
@@ -159,7 +165,7 @@
     }
 
     .sticky-new-txt {
-        top: 19vh;
+        top: 180px;
     }
 
     .bestseller-container {
@@ -175,7 +181,7 @@
     }
 
     .sticky-bestseller-txt {
-        top: 13.5vh;
+        top: 130px;
     }
 
     .sticky-new-txt,
@@ -187,7 +193,9 @@
 
     .txt-container {
         width: 100%;
-        max-width: 715px;
+        max-width: 342px;
+        height: 78px;
+        gap: 14px;
         padding-inline: 16px;
     }
 
@@ -209,12 +217,14 @@
 
     .new-item-container .txt-container {
         width: 342px;
+        gap: 14px;
         padding-inline: 0;
         align-items: center;
     }
 
     .bestseller-container .txt-container {
         width: 346px;
+        gap: 14px;
         padding-inline: 0;
         align-items: center;
     }
