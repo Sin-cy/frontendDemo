@@ -165,7 +165,7 @@ nav {
 }
 
 .tab-editorial:hover {
-    transform: scale(1) translate(0.5px);
+    transform: scale(1);
     font-size: 18px;
     font-weight: 700;
 }
@@ -206,7 +206,7 @@ nav {
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out,  0.4 ease-out;
+    transition: 0.35s ease-in-out;
 }
 
 
@@ -217,7 +217,6 @@ nav {
     left: 0;
     min-width: 115px;
     height: 150px;
-    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
     z-index: 1001;
     list-style: none;
     padding: 10px;
@@ -262,16 +261,18 @@ nav {
 }
 
 
-/* item links a (base with transition for smooth scale) */
+/* item links a */
 .dropdown-menu a {
-    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 400px;
+    color: #ffffff;
     text-decoration: none;
     display: inline-block;
     text-align: left;
     min-width: 60px;
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-
+    transition: 0.3s ease-in-out;
 }
+
 /* per item hover grow */
 .dropdown-menu a:hover {
     transform: scale(1.05) translateY(1px) translateX(2.5px);
@@ -713,9 +714,6 @@ nav {
         display: list-item;
     }
 
-
-    /* -----------  NOTE: editorial mobile ends here ----------- */
-
     .overlay,
     .dropdown:hover .overlay,
     .dropdown:hover .dropdown-menu {
@@ -724,8 +722,10 @@ nav {
         visibility: hidden;
     }
 
+    /* -----------  NOTE: editorial mobile ends here ----------- */
+
     .hero-bg {
-        height: 100dvh;
+        height: 100svh;
         object-fit: cover;
         object-position: center;
     }

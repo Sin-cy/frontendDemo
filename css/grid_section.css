@@ -116,6 +116,7 @@
     white-space: nowrap;
     z-index: 3;
     font-weight: 900;
+    cursor: default;
 }
 
 @media (hover: hover) and (pointer: fine) {

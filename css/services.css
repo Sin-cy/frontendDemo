@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction: row;
     padding: 174px 174px 174px 174px;
+    cursor: default;
 }
 
 .services-container {

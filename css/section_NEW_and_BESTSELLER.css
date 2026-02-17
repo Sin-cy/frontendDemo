@@ -44,6 +44,8 @@
     width: fit-content;
     background-color: transparent;
     line-height: 1;
+
+    cursor: default;
 }
 
 .new-bg {
@@ -103,6 +105,8 @@
     width: fit-content;
     background-color: transparent;
     line-height: 1;
+
+    cursor: default;
 }
 
 .bestseller-bg {
