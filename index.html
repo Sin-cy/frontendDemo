@@ -2,11 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>demo</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">   
 
         <link href="css/global.css" rel="stylesheet">
         <link href="css/logo_header.css" rel="stylesheet">
@@ -16,6 +20,7 @@
 
         <link href="css/grid_section.css" rel="stylesheet">
         <link href="css/scrolling_text.css" rel="stylesheet">
+        <link href="css/services.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
     </head>
     <body>
@@ -46,12 +51,12 @@
 
                 <div class="nav-tabs" id="primary-mobile-nav">
                     <a class="tab" href="#">WOMEN</a>
-                    <a class="tab" href="javascript:void(0)">COLLECTIONS</a>
+                    <a class="tab" href="#">COLLECTIONS</a>
 
 
                     <!-- TODO: Add dropdown effect for EDITORIAL --> 
                     <div class="dropdown mobile-editorial-dropdown">
-                        <a class="tab dropdown-tab mobile-editorial-trigger" href="#">
+                        <a class="tab-editorial dropdown-tab mobile-editorial-trigger" href="#">
                             <span class="mobile-editorial-label">EDITORIAL</span>
                             <img class="mobile-editorial-arrow" src="./public/icons/polygon-arrow.svg" alt="">
                         </a>
@@ -262,6 +267,48 @@
                     </div>
                 </section>
 
+
+
+                <!-- NOTE: section shipping customer service and payments -->
+                <section class="all-services">
+                    <div class="services-container">
+                        <div class="shipping-services">
+                            <p class="heading-services">WORLDWIDE SHIPPING</p>
+                            <p class="desc-services">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non
+                                rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut
+                                lacus. Proin vitae
+                            </p>
+                        </div>
+                        <div class="customer-services">
+                            <p class="heading-services">CUSTOMER SERVICE</p>
+                            <p class="desc-services">
+                                <span class="underline-content">Lorem ipsum dolor sit amet</span>, 
+                                consectetur adipiscing elit. Nam ornare, nisl non
+                                rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut
+                                lacus. Proin vitae
+                            </p>
+                        </div>
+                        <div class="payment-services">
+                            <p class="heading-services">SECURE PAYMENT</p>
+                            <p class="desc-services">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non
+                                rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut
+                                lacus. Proin vitae
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                NOTE: section questions 
+                <!-- <section> -->
+
+                <!-- </section> -->
+
+
+
+
+
                 <div style="height: 800px; background: lightgray;">Scroll down to test sticky nav!</div>
                 <section class="hero-section light-bg" style="height: 800px; background: white;">
                     Hero content here
@@ -320,7 +367,8 @@
                         <div class="footer-newsletter"> 
                             <p class="footer-heads">NEWSLETTER</p>
                             <div class="footer-newsletter-container">
-                                <input class="email-input" readonly="readonly" type="text" name="Email" placeholder="Email">
+                                <input class="email-input" readonly="readonly"
+                                type="text" name="Email" autocomplete="Email" placeholder="Email">
                                 <button class="subscribe-btn" type="button">SUBSCRIBE</button>
                             </div>
                         </div>

@@ -1,28 +1,4 @@
 
-.tab {
-    text-decoration: none;
-    color: #000000;
-    padding: 10px;
-    gap: 10px;
-    cursor: default;
-
-    /* TODO: doesn't look exactly like prototype figma but following figma 300ms instructions */
-    transition: font-size 0.3s ease-in-out;
-    /* transition: font-size 0.2s linear; */
-    /* transition: font-size 0.2s ease-in,  */
-    /*             font-weight 0.1s steps(3); */
-}
-
-.tab:hover {
-    transform: scale(1) translate(0.5px);
-    font-size: 18px;
-    font-weight: 700;
-    /* transition: font-size 0.3s ease-in-out, */
-    /*             font-weight 0.1s steps(3); */
-    /* transition: text-shadow 0.5s 0.7s ease-in; */
-    /* transition: font-size 1.15s 0.3s ease-in-out; */
-}
-
 /*------------ parent navbar container -------------*/
 nav {
     font-family: Arial, Helvetica, sans-serif;
@@ -61,8 +37,8 @@ nav {
     /* TODO: figma says 300ms or 0.3s but in prototype it seemed faster */
     /* transition: opacity 0.3s ease-out; */
 
-    transition: opacity 0.2s ease-in, opacity 0.3s ease-out;
-    font-family: "Arial", Helvetica, sans-serif;
+    transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -71,7 +47,7 @@ nav {
 /*    opacity: 50%;  */
 
 .lang-dropdown-menu {
-    font-family: "Inter", sans-serif;
+    /* font-family: "Inter", sans-serif; */
     position: absolute;
     top: calc(100% + 14px);
     left: 15px;
@@ -115,7 +91,6 @@ nav {
     }
 
     .lang-list:hover .lang-text {
-        font-family: "Inter", sans-serif;
         opacity: 0.5;
     }
 
@@ -155,25 +130,64 @@ nav {
     opacity: 0.5;
 }
 
-.lang-list.is-open .lang-text {
-    font-family: "Inter", sans-serif;
-}
+/* .lang-list.is-open .lang-text { */
+/*     font-family: "Inter", sans-serif; */
+/* } */
 
 
-/* ----- navigation link tabs & dropdown ------- */
+/* ----- NOTE: navigation link tabs & dropdown ------- */
 .nav-tabs {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     height: 36px;
     gap: 24px;
 }
 
+.tab {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    cursor: default;
+
+    /* TODO: doesn't look exactly like prototype figma but following figma 300ms instructions */
+    transition: font-size 0.3s ease-in-out;
+    /* transition: font-size 0.2s linear; */
+    /* transition: font-size 0.2s ease-in,  */
+    /*             font-weight 0.1s steps(3); */
+}
+
+.tab-editorial {
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    cursor: default;
+}
+
+.tab-editorial:hover {
+    transform: scale(1) translate(0.5px);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.tab:hover {
+    /* font-family: "Inter", sans-serif; */
+    transform: scale(1) translate(0.5px);
+    font-size: 18px;
+    font-weight: 700;
+    /* transition: font-size 0.3s ease-in-out, */
+    /*             font-weight 0.1s steps(3); */
+    /* transition: text-shadow 0.5s 0.7s ease-in; */
+    /* transition: font-size 1.15s 0.3s ease-in-out; */
+}
+
+
 .mobile-menu-toggle {
     display: none;
 }
 
-/* dropdown editorial tab */
+/* navtab dropdown editorial */
 .dropdown {
     position: relative;
     display: inline-flex;
@@ -192,7 +206,7 @@ nav {
 
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out,  0.4 ease-out;
 }
 
 
@@ -211,14 +225,14 @@ nav {
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .dropdown-menu ul {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 0px; /* Remove if gap is enough; or keep 5px for item breathing */
+    padding: 0px;
     gap: 15px;
     list-style: none;
 
@@ -325,39 +339,6 @@ nav {
 
 
 
-
-
-
-
-@media (width < 768px) {
-    .lang-list {
-        padding-left: 0;
-        gap: 8px;
-    }
-
-    .lang-text {
-        font-size: 16px;
-        line-height: 1;
-    }
-
-    .lang-dropdown-icon {
-        width: 7px;
-        height: 5px;
-    }
-
-    .lang-dropdown-menu {
-        left: 0;
-        top: calc(100% + 8px);
-        width: 100%;
-        margin-top: 0;
-    }
-
-    .lang-dropdown-item {
-        min-height: 34px;
-        font-size: 13px;
-    }
-}
-
 /* NOTE: Mobile Navbar */
 @media (width <= 767px) {
 
@@ -386,7 +367,7 @@ nav {
     }
 
     .lang-list {
-        font-family: "Arial", Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         left: 0px;
         padding-left: 0;
         gap: 8px;
@@ -404,7 +385,6 @@ nav {
     }
 
     .lang-list.is-open {
-        font-family: "Inter", sans-serif;
         background: #ffffff;
     }
 
@@ -743,18 +723,7 @@ nav {
         opacity: 0;
         visibility: hidden;
     }
-}
 
-@media (width <= 450px) {
-    .hero-bg {
-        height: 100dvh;
-        object-fit: cover;
-        object-position: center;
-    }
-}
-
-
-@media (width < 391px) {
     .hero-bg {
         height: 100dvh;
         object-fit: cover;
@@ -779,7 +748,6 @@ nav {
     }
 
     .lang-dropdown-item {
-        font-family: "Arial", sans-serif;
         line-height: normal;
     }
 
@@ -818,7 +786,7 @@ nav {
 
     /* mobile menu tooggle and close */
     .mobile-menu-toggle {
-        width: 18px;
+        width: 20px;
         height: 8px;
     }
 
@@ -860,4 +828,15 @@ nav {
         /*     calc(env(safe-area-inset-bottom) + 8px) */
         /* ); */
     }
+
 }
+
+/* @media (width <= 450px) {
+    .hero-bg {
+        height: 100dvh;
+        object-fit: cover;
+        object-position: center;
+    }
+} */
+
+
