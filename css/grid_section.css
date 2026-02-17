@@ -8,7 +8,7 @@
 }
 
 .collection-grid {
-    max-width: 1040px;
+    max-width: 978px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -23,7 +23,7 @@
 
 .grid-card-top {
     grid-column: 1 / -1;
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 978 / 475;
 }
 
 .grid-card-bottom {
@@ -39,7 +39,7 @@
     inset: 0;
 }
 
-/* first grid block */
+/* first grid top block */
 .grid-media-base {
     z-index: 1;
     opacity: 1;
@@ -54,19 +54,19 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Cards 2 and 3: stable layer behind base and hover */
+/* underlay */
 .grid-media-underlay {
     z-index: 0;
     pointer-events: none;
 }
 
-/* Keep underlay and hover perfectly aligned */
 .grid-card-2 .grid-media-reveal,
 .grid-card-3 .grid-media-reveal {
     object-position: center 25%;
 }
 
-/* Cards 2 and 3: oversized base layer for smooth vertical slide */
+/* grid cards 2 and 3
+ * oversized base layer gets rids of the border */
 .grid-base-track {
     position: absolute;
     left: 0;
@@ -79,13 +79,25 @@
     transition: transform 0.4s ease-in-out, opacity 0.28s ease-out 0.2s;
 }
 
+/* had to specifically move grid 3 image down by like a few pixels */
+.grid-card-3 .grid-base-track {
+    top: calc(-18% + 21px);
+}
+
 .grid-base-track-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 25%;
     display: block;
 }
+
+/* .grid-base-track-image-2 { */
+/*     object-position: center 26%; */
+/* } */
+
+/* .grid-base-track-image-3 { */
+/*     object-position: center 29%; */
+/* } */
 
 
 .grid-title-1,
@@ -148,7 +160,6 @@
     font-size: 40px;
 }
 
-/* mid screens */
 @media (width < 1024px) {
     .collection-grid {
         gap: 68px;
@@ -169,7 +180,7 @@
 
     .grid-card-top {
         grid-column: 1 / -1;
-        aspect-ratio: 16 / 7;
+        aspect-ratio: 978 / 475;
     }
 
     .grid-card-bottom {
@@ -184,6 +195,8 @@
     .grid-title-2,
     .grid-title-3 {
         font-size: 18px;
+        font-weight: 900;
+        line-height: 25px;
         white-space: normal;
         text-wrap: balance;
         width: 78%;
@@ -199,24 +212,79 @@
         object-position: center 52%;
     }
 
-    .grid-card-2 .grid-media {
-        transform: scale(1.2);
-        object-position: center 60%;
+    .grid-card-top .grid-media-base {
+        width: 981px;
+        height: 552px;
+
+        top: -24px;
+        left: calc(50% - 489px);
+
+        right: auto;
+        bottom: auto;
+        max-width: none;
+        transform: none;
+        transition: none;
     }
 
-    .grid-card-2 .grid-base-track-image {
-        object-position: center 60%;
-        transform: scale(1.2);
+    .grid-card-top .grid-media-hover {
+        display: none;
+        opacity: 0;
+        transition: none;
     }
 
-    .grid-card-3 .grid-media {
-        transform: scale(1.22);
-        object-position: center 60%;
+    .grid-card-top:hover .grid-media-base {
+        opacity: 1;
     }
 
+    .grid-card-2 .grid-base-track {
+        /* w is left h is right */
+        width: 490px;
+        height: 490px;
+
+        left: calc(50% - 239px);
+        top: 0;
+
+        right: auto;
+        bottom: auto;
+        transform: none;
+        transition: none;
+    }
+
+    .grid-card-3 .grid-base-track {
+        width: 454px;
+        height: 455px;
+
+        left: calc(50% - 227px);
+        top: 0;
+
+        right: auto;
+        bottom: auto;
+        transform: none;
+        transition: none;
+    }
+
+    .grid-card-2 .grid-base-track-image,
     .grid-card-3 .grid-base-track-image {
-        object-position: center 60%;
-        transform: scale(1.22);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        transform: none;
+    }
+
+    .grid-card-2 .grid-media-hover,
+    .grid-card-3 .grid-media-hover {
+        display: none;
+        opacity: 0;
+        transition: none;
+    }
+
+    .grid-card-2:hover .grid-base-track,
+    .grid-card-3:hover .grid-base-track {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 
 }
+

@@ -1,29 +1,21 @@
 
 .tab {
     text-decoration: none;
-    color: #000000; 
+    color: #000000;
     padding: 10px;
     gap: 10px;
     cursor: default;
-    /* transition: 0.26s ease-in, font-weight 0.1s ease-out; */
-    /* transition: font-size 0.27s linear; */
-    /* transition: font-size 0.1s steps(5), font-weight 0.1s steps(3); */
-    /* transition: font-size 0.05s steps(3), font-size ease-in, font-size */
-    /* 0.4s ease-out; */
-    /* transition: font-size 0.15s ease-out, text-shadow 0.15s ease-out; */
-    /* text-shadow: 0 0 0 transparent; */
 
     /* TODO: doesn't look exactly like prototype figma but following figma 300ms instructions */
     transition: font-size 0.3s ease-in-out;
     /* transition: font-size 0.2s linear; */
-
     /* transition: font-size 0.2s ease-in,  */
     /*             font-weight 0.1s steps(3); */
 }
 
 .tab:hover {
     transform: scale(1) translate(0.5px);
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: 700;
     /* transition: font-size 0.3s ease-in-out, */
     /*             font-weight 0.1s steps(3); */
@@ -54,7 +46,6 @@ nav {
 
 /* language dropdown switcher */
 .lang-list {
-    font-family: "Inter", sans-serif;
     font-weight: 400;
     display: inline-flex;
     align-items: center;
@@ -63,14 +54,24 @@ nav {
     gap: 10px;
     cursor: default;
     position: relative;
-    /* user-select: none; */
+    user-select: none;
 }
+
+.lang-text {
+    /* TODO: figma says 300ms or 0.3s but in prototype it seemed faster */
+    /* transition: opacity 0.3s ease-out; */
+
+    transition: opacity 0.2s ease-in, opacity 0.3s ease-out;
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
 
 /* .lang-text:hover,  */
 /* .lang-dropdown-icon:hover { */
 /*    opacity: 50%;  */
 
 .lang-dropdown-menu {
+    font-family: "Inter", sans-serif;
     position: absolute;
     top: calc(100% + 14px);
     left: 15px;
@@ -80,9 +81,8 @@ nav {
     padding: 0;
     list-style: none;
 
-    background: white;
+    background: #ffffff;
     border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -115,6 +115,7 @@ nav {
     }
 
     .lang-list:hover .lang-text {
+        font-family: "Inter", sans-serif;
         opacity: 0.5;
     }
 
@@ -139,6 +140,7 @@ nav {
     min-height: 36px;
     width: 100%;
     padding: 0;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 400;
     color: #000000;
@@ -146,16 +148,15 @@ nav {
     text-align: center;
 }
 
-.lang-text {
-    /* TODO: figma says 300ms or 0.3s but in prototype it seemed faster */
-    /* transition: opacity 0.3s ease-out; */
-    transition: opacity 0.2s ease-in, opacity 0.3s ease-out;
-}
 
 /* Keep trigger visual state while dropdown is open on mobile */
 .lang-list.is-open .lang-text,
 .lang-list.is-open .lang-dropdown-icon {
     opacity: 0.5;
+}
+
+.lang-list.is-open .lang-text {
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -198,19 +199,19 @@ nav {
 .dropdown-menu {
     display: block;
     position: absolute;
-    top: 100%; /* Directly under tab */
+    top: 100%;
     left: 0;
-    min-width: 115px; /* Adjust per Figma */
+    min-width: 115px;
     height: 150px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1001; /* Above overlay */
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+    z-index: 1001;
     list-style: none;
     padding: 10px;
     margin: 0;
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .dropdown-menu ul {
@@ -253,7 +254,7 @@ nav {
     text-decoration: none;
     display: inline-block;
     text-align: left;
-    min-width: 60px; 
+    min-width: 60px;
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 
 }
@@ -305,7 +306,7 @@ nav {
 .sign-in-btn {
     all: unset;
     padding: 10px;
-    transition: 0.35s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .sign-in-btn:hover {
@@ -313,6 +314,7 @@ nav {
     padding: 10px;
     opacity: 50%;
     cursor: default;
+    transition: opacity 0.3s ease-in-out;
 }
 
 
@@ -326,32 +328,6 @@ nav {
 
 
 
-/* responsive for smaller mid large devices */
-
-/* @media (width < 768px) { */
-/* .new-item-container {
-    padding: 20px 0px 20px 0px;
-} */
-
-/* .header-container {
-    padding: 35px 20px 0 20px;
-}
- */
-/* } */
-
-@media (width < 1024px) {
-    /* .lang-list { */
-    /*     padding-left: 0; */
-    /*     gap: 8px; */
-    /* } */
-
-    /* .lang-dropdown-menu { */
-    /*     left: 0; */
-    /*     top: calc(100% + 10px); */
-    /*     width: 100%; */
-    /*     margin-top: 0; */
-    /* } */
-}
 
 @media (width < 768px) {
     .lang-list {
@@ -428,6 +404,7 @@ nav {
     }
 
     .lang-list.is-open {
+        font-family: "Inter", sans-serif;
         background: #ffffff;
     }
 
@@ -441,7 +418,7 @@ nav {
         line-height: 1;
     }
 
-    /* NOTE: disable tap/hover visual effects for mobile lang trigger */
+    /* NOTE: disable tap/hover effects for mobile lang dropdown */
     .lang-text,
     .lang-dropdown-icon,
     .lang-dropdown-menu {
@@ -698,7 +675,7 @@ nav {
         transform: none;
     }
 
-    /* NOTE: mobile editorial list items should not animate on tap/hover */
+    /* NOTE: mobile editorial list items no tap/hover */
     .nav-tabs .mobile-editorial-menu a,
     .nav-tabs .mobile-editorial-menu a:hover {
         transition: none;
@@ -723,7 +700,7 @@ nav {
         padding-bottom: 20px;
     }
 
-    /* NOTE: mobile editorial ul slide-in from right */
+    /* NOTE: mobile editorial ul right slide animation */
     .nav-tabs .mobile-editorial-dropdown.is-list-visible .mobile-editorial-list {
         visibility: visible;
     }
@@ -757,7 +734,7 @@ nav {
     }
 
 
-    /* -----------  TODO: Editorial mobile ends here for 767 ----------- */
+    /* -----------  NOTE: editorial mobile ends here ----------- */
 
     .overlay,
     .dropdown:hover .overlay,
@@ -877,9 +854,10 @@ nav {
     .nav-container.is-menu-open .nav-tabs {
         gap: 25px;
         padding: 25px 0 0;
-        padding-bottom: max(
-        calc(52px + 8px),                          /* Figma browser bar + gap */
-        calc(env(safe-area-inset-bottom) + 8px)    /* iPhone safe area + gap */
-        );
+        padding-bottom: 8px;
+        /* padding-bottom: max( */
+        /*     calc(52px + 8px), */
+        /*     calc(env(safe-area-inset-bottom) + 8px) */
+        /* ); */
     }
 }

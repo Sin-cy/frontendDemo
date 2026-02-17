@@ -33,7 +33,7 @@
     will-change: transform;
 }
 
-/* shrinking logo on scroll ? */
+/* TODO: shrinking logo on scroll ?? */
 .header-container.shrunk {
     height: 100px;  /* Smaller height */
     padding-top: 50px;
