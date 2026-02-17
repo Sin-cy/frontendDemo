@@ -1,0 +1,211 @@
+/* language dropdown switcher */
+.lang-list {
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    gap: 10px;
+    cursor: default;
+    position: relative;
+    user-select: none;
+}
+
+.lang-text {
+    /* TODO: figma says 300ms or 0.3s but in prototype it seemed faster */
+    /* transition: opacity 0.3s ease-out; */
+
+    transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* .lang-text:hover,  */
+/* .lang-dropdown-icon:hover { */
+/*    opacity: 50%;  */
+
+.lang-dropdown-menu {
+    /* font-family: "Inter", sans-serif; */
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 15px;
+    width: 85%;
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+
+    background: #ffffff;
+    border: none;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top center;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .lang-list::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: -12px;
+        right: -12px;
+        height: 14px;
+        display: none;
+    }
+
+    .lang-list:hover::after {
+        display: block;
+    }
+
+    .lang-list:hover .lang-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
+
+    .lang-list:hover .lang-text {
+        opacity: 0.5;
+    }
+
+    .lang-list:hover .lang-dropdown-icon {
+        opacity: 0.5;
+    }
+}
+
+/* Mobile tap-open state for language dropdown */
+.lang-list.is-open .lang-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+    transition-delay: 0s;
+}
+
+.lang-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    width: 100%;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #000000;
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+/* Keep trigger visual state while dropdown is open on mobile */
+.lang-list.is-open .lang-text,
+.lang-list.is-open .lang-dropdown-icon {
+    opacity: 0.5;
+}
+
+.lang-list.is-open .lang-text {
+    font-family: "Inter", sans-serif;
+}
+
+@media (width <= 767px) {
+    .lang-dropdown-menu {
+        left: -14px;
+        top: calc(100% + 0px);
+        width: calc(100% + 15px);
+        background: #ffffff;
+    }
+
+    .lang-list {
+        font-family: Arial, Helvetica, sans-serif;
+        left: 0px;
+        padding-left: 0;
+        gap: 8px;
+        order: 1;
+        height: 45px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-list * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-list.is-open {
+        background: #ffffff;
+    }
+
+    .lang-dropdown-item {
+        font-family: "Inter", sans-serif;
+        line-height: normal;
+    }
+
+    .lang-text {
+        font-size: 13px;
+        line-height: 1;
+    }
+
+    /* NOTE: disable tap/hover effects for mobile lang dropdown */
+    .lang-text,
+    .lang-dropdown-icon,
+    .lang-dropdown-menu {
+        transition: none;
+    }
+
+    .lang-list.is-open .lang-text,
+    .lang-list.is-open .lang-dropdown-icon {
+        opacity: 1;
+    }
+
+
+}
+
+@media (width < 391px) {
+    .lang-dropdown-menu {
+        left: -15px;
+        width: 90px;
+        height: 37px;
+        top: calc(100% + 0px);
+        /* width: calc(100% + 24px); */
+        background: #ffffff;
+    }
+
+    .lang-list.is-open {
+        background: #ffffff;
+    }
+
+    .lang-dropdown-item {
+        line-height: normal;
+    }
+
+    .lang-dropdown-icon {
+        width: 7px;
+        height: 5px;
+    }
+
+    /* disable langlist tap animation for mobile */
+    .lang-text,
+    .lang-dropdown-icon,
+    .lang-dropdown-menu {
+        transition: none;
+    }
+
+    .lang-list.is-open .lang-text,
+    .lang-list.is-open .lang-dropdown-icon {
+        opacity: 1;
+    }
+
+    .lang-list.is-open .lang-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+

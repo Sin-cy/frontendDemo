@@ -1,0 +1,87 @@
+.all-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    padding: 174px 174px 174px 174px;
+}
+
+.services-container {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 126px;
+    opacity: 1;
+}
+
+.shipping-services, 
+.customer-services, 
+.payment-services {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+} 
+
+.heading-services {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.desc-services {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6); }
+
+.underline-content {
+    text-decoration: underline;
+}
+
+@media (width < 768px) {
+    .all-services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: row;
+        padding: 100px 22px 100px 22px;
+        overflow: hidden;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .desc-services {
+        padding-right: 100px;
+    }
+
+}
+
+
+@media (width < 480px) {
+    .all-services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: row;
+        padding: 100px 22px 100px 22px;
+        overflow: hidden;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .desc-services {
+        padding-right: 63px;
+    }
+
+}
+
+
