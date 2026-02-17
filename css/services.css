@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
     flex-direction: row;
     padding: 174px 174px 174px 174px;
 }
@@ -23,6 +22,8 @@
     flex-direction: column;
     gap: 14px;
     text-align: left;
+    max-width: 280px;
+    max-height: 96px;
 } 
 
 .heading-services {
@@ -39,30 +40,94 @@
     text-decoration: underline;
 }
 
-@media (width < 768px) {
+@media (769px <= width <= 1024px) {
     .all-services {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        flex-direction: row;
-        padding: 100px 22px 100px 22px;
-        overflow: hidden;
+        padding: 120px 40px;
+        overflow-x: clip;
     }
 
     .services-container {
         display: flex;
         flex-direction: column;
         gap: 48px;
+        width: 100%;
+    }
+
+    .shipping-services,
+    .customer-services,
+    .payment-services {
+        width: 100%;
+        min-width: 0;
     }
 
     .desc-services {
-        padding-right: 100px;
+        padding-right: 0;
+        max-width: 520px;
+    }
+}
+
+@media (481px <= width <= 768px) {
+    .all-services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: row;
+        padding: 100px 22px 100px 22px;
+        overflow-x: clip;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        width: 100%;
+    }
+
+    .shipping-services,
+    .customer-services,
+    .payment-services {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .desc-services {
+        padding-right: 0;
+        max-width: 520px;
     }
 
 }
 
+@media (538px <= width <= 1172px) {
+    .all-services {
+        padding: 100px 32px;
+        overflow-x: clip;
+    }
 
-@media (width < 480px) {
+    .services-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 36px;
+        width: 100%;
+    }
+
+    .shipping-services,
+    .customer-services,
+    .payment-services {
+        width: auto;
+        min-width: 0;
+        flex: 1 1 0;
+    }
+
+    .desc-services {
+        padding-right: 0;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+
+@media (width <= 480px) {
     .all-services {
         display: flex;
         flex-wrap: wrap;
@@ -83,5 +148,3 @@
     }
 
 }
-
-

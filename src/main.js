@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         langList.classList.remove('is-open')
     }
 
-    // toggle only for mobile widths
+    // toggle only for mobile
     langList.addEventListener('click', (event) => {
         if (!mobileLangQuery.matches) {
             return
@@ -75,17 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
         langList.classList.toggle('is-open')
     })
 
-    // close menu after picking a dropdown item on touch devices
+    // drop down never close on taping drop down itself
     langMenu.addEventListener('click', (event) => {
         if (!mobileLangQuery.matches) {
             return
         }
 
         event.stopPropagation()
-
-        if (event.target.closest('.lang-dropdown-item')) {
-            closeLangMenu()
-        }
     })
 
     // close menu when tapping outside
@@ -99,16 +95,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    // close menu on Esc or when switching input mode
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && mobileLangQuery.matches) {
+    // close menu when switching input mode
+    mobileLangQuery.addEventListener('change', () => {
+        closeLangMenu()
+    })
+})
+
+// touch language dropdown toggle for mid-screen tablets
+document.addEventListener('DOMContentLoaded', () => {
+    const langList = document.querySelector('.lang-list')
+    const langMenu = document.querySelector('.lang-dropdown-menu')
+    const tapLangQuery = window.matchMedia('(hover: none), (pointer: coarse)')
+    const midScreenQuery = window.matchMedia('(width >= 768px) and (width <= 1024px)')
+
+    if (!langList || !langMenu) {
+        return
+    }
+
+    const shouldEnableTabletTap = () => {
+        return tapLangQuery.matches && midScreenQuery.matches
+    }
+
+    const closeLangMenu = () => {
+        langList.classList.remove('is-open')
+    }
+
+    langList.addEventListener('click', (event) => {
+        if (!shouldEnableTabletTap()) {
+            return
+        }
+
+        event.stopPropagation()
+        langList.classList.toggle('is-open')
+    })
+
+    langMenu.addEventListener('click', (event) => {
+        if (!shouldEnableTabletTap()) {
+            return
+        }
+
+        event.stopPropagation()
+    })
+
+    document.addEventListener('click', (event) => {
+        if (!shouldEnableTabletTap()) {
+            return
+        }
+
+        if (!langList.contains(event.target)) {
             closeLangMenu()
         }
     })
 
-    mobileLangQuery.addEventListener('change', () => {
-        closeLangMenu()
-    })
+    tapLangQuery.addEventListener('change', closeLangMenu)
+    midScreenQuery.addEventListener('change', closeLangMenu)
 })
 
 // mobile nav tabs toggle
@@ -119,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const editorialDropdown = navTabs?.querySelector('.mobile-editorial-dropdown')
     const mobileQuery = window.matchMedia('(width <= 767px)')
     const langList = document.querySelector('.lang-list')
-    let lockedScrollY = 0
     let isPageLocked = false
     let pausedVideos = []
 
@@ -132,13 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        lockedScrollY = window.scrollY || window.pageYOffset || 0
-        document.body.style.position = 'fixed'
-        document.body.style.top = `-${lockedScrollY}px`
-        document.body.style.left = '0'
-        document.body.style.right = '0'
-        document.body.style.width = '100%'
+        document.documentElement.style.overflow = 'hidden'
+        document.documentElement.style.touchAction = 'none'
         document.body.style.overflow = 'hidden'
+        document.body.style.touchAction = 'none'
         isPageLocked = true
     }
 
@@ -147,17 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        const topValue = document.body.style.top
-        document.body.style.position = ''
-        document.body.style.top = ''
-        document.body.style.left = ''
-        document.body.style.right = ''
-        document.body.style.width = ''
+        document.documentElement.style.overflow = ''
+        document.documentElement.style.touchAction = ''
         document.body.style.overflow = ''
+        document.body.style.touchAction = ''
         isPageLocked = false
-
-        const restoredY = topValue ? Math.abs(parseInt(topValue, 10)) : lockedScrollY
-        window.scrollTo(0, restoredY)
     }
 
     const pauseBackgroundVideos = () => {

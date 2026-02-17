@@ -22,6 +22,7 @@
         <link href="css/scrolling_text.css" rel="stylesheet">
         <link href="css/services.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
+        <link href="css/questions.css" rel="stylesheet">
     </head>
     <body>
         <nav>
@@ -300,10 +301,70 @@
                     </div>
                 </section>
 
-                NOTE: section questions 
-                <!-- <section> -->
+                <!-- NOTE: section questions -->
+                <section>
+                    <div class="question-section-container">
 
-                <!-- </section> -->
+                        <div class="question-section-inner-wrapper">
+
+                            <div class="question-section-title">
+                                <p class="question-main-title">
+                                FREQUENTLY ASKED QUESTIONS
+                                </p>
+                                <p class="question-subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo.
+                                </p>
+                            </div>
+
+                            <div class="question-section-button-wrapper">
+                                <button id="orders_button" class="question-button-default question-order-button" type="button" disabled>ORDERS</button>
+                                <button id="shipping_button" class="question-button-default question-shipping-button" type="button" data-target="shipping">SHIPPING</button>
+                                <button id="return_exchange_button" class="question-button-default question-return-exchange-button is-active" type="button" data-target="returns">RETURNS & EXCHANGES</button>
+                                <button id="size_product_button" class="question-button-default question-sizing-product-button" type="button" disabled>SIZING & PRODUCTS</button>
+                            </div>
+
+                        </div>
+
+                        <div class="common-questions-wrapper">
+
+                            <div class="return-exchange-questions-wrapper">
+                                <div class="first-question-wrapper">
+                                    <button class="faq-question-toggle is-open" type="button" aria-expanded="true">
+                                        <span class="first-question-title">What is your return policy?</span>
+                                        <span class="faq-question-arrow" aria-hidden="true">
+                                            <img class="faq-arrow-icon" src="./public/icons/down_arrow.svg" alt="">
+                                        </span>
+                                    </button>
+                                    <div class="faq-answer is-open">
+                                        <div class="faq-answer-inner">
+                                            <p class="faq-answer-content">
+                                                Items can be returned within 14 days of receipt, provided they are unworn, unwashed, and 
+                                                in original condition with tags attached.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="second-question-wrapper faq-question-static">
+                                    <p class="second-question-title">Can I exchange for a different size?</p>
+                                    <span class="faq-static-arrow" aria-hidden="true">
+                                        <img src="./public/icons/down_arrow.svg" alt="">
+                                    </span>
+                                </div>
+
+                                <div class="third-question-wrapper faq-question-static">
+                                    <p class="third-question-title">Are sale items refundable?</p>
+                                    <span class="faq-static-arrow" aria-hidden="true">
+                                        <img src="./public/icons/down_arrow.svg" alt="">
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
 
 
 
@@ -383,5 +444,6 @@
         </main>
     </body>
     <script src="src/main.js"></script>
+    <script src="src/activeButtonState.js"></script>
     <script src="src/mediaChecker.js"></script>
 </html>

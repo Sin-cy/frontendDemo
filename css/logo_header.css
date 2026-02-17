@@ -50,16 +50,25 @@
     mix-blend-mode: difference;
 }
 
-@media (width <= 767px) {
+@media (451px <= width <= 767px) {
     .header-container {
+        height: 215px;
         padding: 16px 14px 0 14px;
-        margin-top: 0px;
+        margin-top: 22px;
     }
 
     .main-logo {
         width: 100%;
         max-width: 100%;
         height: auto;
+    }
+}
+
+@media (768px <= width <= 1136px) {
+    .header-container {
+        height: 215px;
+        padding: 12px 20px 0 20px;
+        margin-top: 15px;
     }
 }
 
