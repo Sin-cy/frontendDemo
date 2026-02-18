@@ -1,16 +1,16 @@
 // Shrink SVG Logo Header
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector('.header-container')
-    const shrinkThreshold = 20
+    const shrinkThreshold = 200
 
     if (!header) {
         return
     }
 
-    const tinyMobileQuery = window.matchMedia('(width < 391px)')
+    const noShrinkQuery = window.matchMedia('(width <= 767px)')
 
     const syncHeaderShrinkState = () => {
-        if (tinyMobileQuery.matches) {
+        if (noShrinkQuery.matches) {
             header.classList.remove('shrunk')
             return
         }
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Scroll listener with passive for better perf
     window.addEventListener('scroll', () => {
-        if (tinyMobileQuery.matches) {
+        if (noShrinkQuery.matches) {
             header.classList.remove('shrunk')
             return
         }
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, { passive: true })
 
-    tinyMobileQuery.addEventListener('change', syncHeaderShrinkState)
+    noShrinkQuery.addEventListener('change', syncHeaderShrinkState)
 })
 
 // navbar active hover editorial check

@@ -28,14 +28,13 @@
     width: auto;
     max-width: 100%;
     height: auto;
-    /* filter: invert(var(--value, 100%)); */
     mix-blend-mode: difference;
     will-change: transform;
 }
 
-/* TODO: shrinking logo on scroll ?? */
+/* TODO: shrinking logo ------- */
 .header-container.shrunk {
-    height: 100px;  /* Smaller height */
+    height: 100px;
     padding-top: 50px;
     transition: 0.2s ease, padding 0.3s ease;
     /* filter: invert(var(--value, 100%)); */
@@ -50,19 +49,6 @@
     mix-blend-mode: difference;
 }
 
-@media (451px <= width <= 767px) {
-    .header-container {
-        height: 215px;
-        padding: 16px 14px 0 14px;
-        margin-top: 22px;
-    }
-
-    .main-logo {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-    }
-}
 
 @media (768px <= width <= 1136px) {
     .header-container {
@@ -70,9 +56,48 @@
         padding: 12px 20px 0 20px;
         margin-top: 15px;
     }
+
+    .header-container.shrunk {
+        height: 215px;
+        padding-top: 16px;
+    }
+
+    .header-container.shrunk .main-logo {
+        transform: scale(0.22);
+        transition: transform 0.7s ease-in;
+        transform-origin: top center;
+        filter: brightness(0) invert(1);
+        mix-blend-mode: difference;
+        margin-top: 20px;
+    }
+
 }
 
-@media (width <= 450px) {
+@media (481px <= width <= 767px) {
+    .header-container {
+        height: 215px;
+        padding: 16px 14px 0 14px;
+        margin-top: 22px;
+    }
+
+    .header-container.shrunk {
+        height: 215px;
+        padding-top: 16px;
+    }
+
+    .main-logo,
+    .header-container.shrunk .main-logo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        transform: none;
+        transition: none;
+        filter: brightness(0) invert(1);
+        mix-blend-mode: difference;
+    }
+}
+
+@media (width <= 480px) {
     .header-container {
         height: 215px;
         padding: 16px 7px 0 7px;

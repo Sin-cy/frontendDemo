@@ -146,6 +146,7 @@ nav {
 }
 
 .tab {
+    font-size: 13px;
     text-decoration: none;
     color: #000000;
     padding: 10px;
@@ -166,7 +167,7 @@ nav {
 }
 
 .tab-editorial:hover {
-    transform: scale(1);
+    /* transform: scale(1); */
     font-size: 18px;
     font-weight: 700;
 }
@@ -207,7 +208,7 @@ nav {
 
     opacity: 0;
     visibility: hidden;
-    transition: 0.35s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 
@@ -238,7 +239,7 @@ nav {
 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
 }
 
 /* show menu and overlay on container hover only */
@@ -247,18 +248,21 @@ nav {
     display: block;
 }
 
+/* go into full black */
 .dropdown:hover .overlay {
-    opacity: 1; /* Fade to full black */
-    visibility: visible; /* Reveal */
+    opacity: 1; 
+    visibility: visible;
 }
+
 .dropdown:hover .dropdown-menu {
     opacity: 1; /* Fade menu in */
     visibility: visible; /* Reveal */
     transform: scale(1); /* Pop to full size */
 }
+
 .dropdown:hover .dropdown-menu ul {
-    opacity: 1; /* Fade items in sync with menu */
-    visibility: visible; /* Reveal */
+    opacity: 1;
+    visibility: visible;
 }
 
 
@@ -285,9 +289,9 @@ nav {
     column-count: 1;
 }
 
-.dropdown-tab {
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+/* .dropdown-tab { */
+    /* transition: 0.3s ease-in-out; */
+/* } */
 
 .mobile-editorial-arrow,
 .mobile-editorial-item {
