@@ -755,6 +755,27 @@ nav {
     }
 }
 
+@media (938px <= width <= 1366px) {
+    .hero-bg {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    @media (938px <= width <= 1366px) {
+        .hero-bg {
+            height: 100dvh;
+        }
+    }
+    @supports not (height: 100dvh) {
+        @media (938px <= width <= 1366px) {
+            .hero-bg {
+                height: 100vh;
+            }
+        }
+    }
+}
+
 
 /* NOTE: Mobile Navbar */
 @media (width <= 767px) {
@@ -1177,7 +1198,8 @@ nav {
     /* --------------------------- */
 
     .hero-bg {
-        height: 100svh;
+        /* TODO: check this again */
+        height: 96svh;
         object-fit: cover;
         object-position: center;
     }
