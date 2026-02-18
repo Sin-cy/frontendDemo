@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return
     }
 
-    const noShrinkQuery = window.matchMedia('(width <= 767px)')
+    const noShrinkQuery = window.matchMedia('(width <= 937px)')
 
     const syncHeaderShrinkState = () => {
         if (noShrinkQuery.matches) {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const langList = document.querySelector('.lang-list')
     const langMenu = document.querySelector('.lang-dropdown-menu')
-    const mobileLangQuery = window.matchMedia('(width <= 767px)')
+    const mobileLangQuery = window.matchMedia('(width <= 937px)')
 
     if (!langList || !langMenu) {
         return
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langList = document.querySelector('.lang-list')
     const langMenu = document.querySelector('.lang-dropdown-menu')
     const tapLangQuery = window.matchMedia('(hover: none), (pointer: coarse)')
-    const midScreenQuery = window.matchMedia('(width >= 768px) and (width <= 1024px)')
+    const midScreenQuery = window.matchMedia('(width >= 938px) and (width <= 1024px)')
 
     if (!langList || !langMenu) {
         return
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-menu-toggle')
     const navTabs = document.querySelector('#primary-mobile-nav')
     const editorialDropdown = navTabs?.querySelector('.mobile-editorial-dropdown')
-    const mobileQuery = window.matchMedia('(width <= 767px)')
+    const mobileQuery = window.matchMedia('(width <= 937px)')
     const langList = document.querySelector('.lang-list')
     let isPageLocked = false
     let pausedVideos = []
