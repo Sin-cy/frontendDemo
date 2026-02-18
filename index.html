@@ -23,8 +23,9 @@
         <link href="css/services.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
         <link href="css/questions.css" rel="stylesheet">
+        <link href="css/inquiry.css" rel="stylesheet">
     </head>
-    <body>
+    <body id="top">
         <nav>
             <div class="nav-container">
                 <div class="lang-list">
@@ -91,7 +92,7 @@
 
                 <div class="signin-shop-container">
                     <!-- sign in maybe a button -->
-                    <button class="sign-in-btn">
+                    <button class="sign-in-btn" type="button">
                         SIGN IN
                     </button>
                     <img src="./public/icons/shopping-bag-icon.svg"
@@ -367,10 +368,79 @@
                 </section>
 
                 <!-- inquiry section -->
-                <section class="inquiry-container">
-                    <a href="#top" aria-label="Back to top">HOMEPAGE</a>
-                    <div class="inquiry-form-wrapper">
+                <section class="inquiry-container" aria-labelledby="inquiry-title">
+                    <div class="inquiry-main-shell">
+                        <div class="inquiry-main-content">
+                            <div class="inquiry-copy">
+                                <h2 class="inquiry-title" id="inquiry-title">MAKE AN INQUIRY</h2>
+                                <p class="inquiry-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non
+                                    rhoncus commodo.
+                                </p>
+                            </div>
 
+                            <form class="inquiry-form" action="#" method="post">
+                                <div class="inquiry-input-stack">
+                                    <fieldset class="inquiry-mode" aria-label="Inquiry type">
+                                        <label class="inquiry-radio-option" for="inquiry-onsite">
+                                            <input id="inquiry-onsite" type="radio" name="inquiry_type" value="onsite" checked tabindex="-1">
+                                            <span>Onsite</span>
+                                        </label>
+                                        <label class="inquiry-radio-option" for="inquiry-hybrid">
+                                            <input id="inquiry-hybrid" type="radio" name="inquiry_type" value="hybrid" tabindex="-1">
+                                            <span>Hybrid</span>
+                                        </label>
+                                    </fieldset>
+
+                                    <div class="inquiry-form-panel">
+                                        <div class="inquiry-row inquiry-row-top">
+                                            <div class="inquiry-field inquiry-field-no-label">
+                                                <label class="inquiry-label-spacer" for="inquiry-full-name" aria-hidden="true">Full name*</label>
+                                                <input class="inquiry-static-control" id="inquiry-full-name" name="full_name" type="text" autocomplete="name" placeholder="Full name*" readonly tabindex="-1">
+                                            </div>
+
+                                            <div class="inquiry-field">
+                                                <label for="inquiry-email">Email*</label>
+                                                <input class="inquiry-static-control" id="inquiry-email" name="email" type="email" autocomplete="email" placeholder="Plaimanas@gmail.com" readonly tabindex="-1">
+                                            </div>
+                                        </div>
+
+                                        <div class="inquiry-row inquiry-row-bottom">
+                                            <div class="inquiry-field inquiry-field-no-label">
+                                                <label class="inquiry-label-spacer" for="inquiry-phone" aria-hidden="true">Phone Number*</label>
+                                                <input class="inquiry-static-control" id="inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone Number*" readonly tabindex="-1">
+                                            </div>
+
+                                            <div class="inquiry-field inquiry-field-dropdown inquiry-field-no-label">
+                                                <label class="inquiry-label-spacer" aria-hidden="true">Select Subject*</label>
+                                                <div class="inquiry-dropdown" >
+                                                    <div class="inquiry-dropdown-value" id="inquiry-subject-value">Select Subject*</div>
+                                                    <button class="inquiry-dropdown-trigger" type="button" aria-label="Toggle subject list" aria-expanded="false" aria-controls="inquiry-subject-menu" data-inquiry-trigger>
+                                                        <img src="./public/images/inquiry-dropdown-arrow.svg" alt="">
+                                                    </button>
+                                                    <ul class="inquiry-dropdown-menu" id="inquiry-subject-menu" role="listbox" aria-label="Select Subject" hidden>
+                                                        <li><button class="inquiry-dropdown-option" type="button" data-value="General Inquiry">General Inquiry</button></li>
+                                                        <li><button class="inquiry-dropdown-option" type="button" data-value="Booking">Booking</button></li>
+                                                        <li><button class="inquiry-dropdown-option" type="button" data-value="Collaboration">Collaboration</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label class="inquiry-terms" for="inquiry-terms-checkbox">
+                                        <input id="inquiry-terms-checkbox" type="checkbox" name="terms" tabindex="-1">
+                                        <span>I agree to all terms &amp; conditions</span>
+                                    </label>
+                                </div>
+
+                                <button class="inquiry-send-button" type="button" aria-disabled="true" tabindex="-1">SEND</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="inquiry-homepage-wrap">
+                        <a class="homepage-link" href="#top" aria-label="Homepage preview" tabindex="-1" aria-disabled="true">HOMEPAGE</a>
                     </div>
                 </section>
 
@@ -434,4 +504,5 @@
     <script src="src/main.js"></script>
     <script src="src/activeButtonState.js"></script>
     <script src="src/mediaChecker.js"></script>
+    <script src="src/inquiryDropdown.js"></script>
 </html>
