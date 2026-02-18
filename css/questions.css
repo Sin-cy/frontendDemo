@@ -126,6 +126,54 @@
 
 }
 
+/* NOTE: =========================================
+   FAQ Section TITLE CROSSFADE
+   Added for only SHIPPING / RETURNS title swaps
+   ========================================= */
+.faq-title-crossfade-host {
+    position: relative;
+}
+
+.faq-title-crossfade-layer {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    white-space: normal;
+    pointer-events: none;
+}
+
+.faq-title-crossfade-layer--out {
+    animation: faqTitleCrossfadeOut var(--faq-title-out-duration, 1220ms) ease forwards;
+}
+
+.faq-title-crossfade-layer--in {
+    opacity: 0;
+    animation: faqTitleCrossfadeIn var(--faq-title-in-duration, 1340ms) ease var(--faq-title-in-delay, 250ms) forwards;
+}
+
+@keyframes faqTitleCrossfadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes faqTitleCrossfadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ----- END FAQ TITLE CROSSFADE -------- */
+
 .faq-question-toggle {
     width: 100%;
     display: flex;
