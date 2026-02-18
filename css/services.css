@@ -98,7 +98,38 @@
 
 }
 
-@media (538px <= width <= 1172px) {
+@media (538px <= width < 839px) {
+    .all-services {
+        padding: 100px 32px;
+        overflow-x: clip;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .shipping-services,
+    .customer-services,
+    .payment-services {
+        width: auto;
+        min-width: 0;
+        flex: 1 1 0;
+        max-height: none;
+        height: auto;
+    }
+
+    .desc-services {
+        padding-right: 0;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (839px <= width <= 1172px) {
     .all-services {
         padding: 100px 32px;
         overflow-x: clip;
