@@ -110,8 +110,7 @@
     left: 50%;
     margin: 0;
     transform: translate(-50%, -50%);
-    color: #fff;
-    letter-spacing: 0.01em;
+    color: #ffffff;
     text-align: center;
     white-space: nowrap;
     z-index: 3;
@@ -198,8 +197,7 @@
     .grid-title-3 {
         font-size: 18px;
         font-weight: 900;
-        line-height: 25px;
-        white-space: normal;
+        line-height: 1;
         text-wrap: balance;
         width: 78%;
     }

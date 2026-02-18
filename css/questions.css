@@ -31,7 +31,7 @@
     font-size: 40px;
     text-align: center;
     text-transform: uppercase;
-    line-height: 100%;
+    line-height: 1;
 }
 
 .question-subtitle {
@@ -39,7 +39,7 @@
     font-family: Arial, sans-serif;
     font-size: 14px;
     text-align: center;
-    line-height: 100%;
+    line-height: 1;
 }
 
 /* question buttons */
@@ -61,7 +61,7 @@
 
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 100%;
+    line-height: 1;
 }
 
 .question-button-default.is-active {
@@ -122,7 +122,7 @@
     font-style: Bold;
     font-size: 16px;
     text-transform: uppercase;
-    line-height: 100%;
+    line-height: 1;
 
 }
 
@@ -192,7 +192,7 @@
     color: rgba(255, 255, 255, 0.6);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1;
     opacity: 0;
     transition: 0.4s ease-in-out;
     will-change: opacity;
@@ -289,7 +289,7 @@
     }
 
     .question-subtitle {
-        line-height: 1.35;
+        line-height: 1;
     }
 
     .question-section-button-wrapper {
@@ -310,7 +310,6 @@
     .second-question-title,
     .third-question-title {
         font-size: 15px;
-        line-height: 1.2;
     }
 
     .faq-answer-content {
@@ -390,7 +389,7 @@
         font-family: Hanken Grotesk, Helvetica, sans-serif;
         font-weight: 900;
         font-size: 24px;
-        line-height: 100%;
+        line-height: 1;
         text-align: center;
         text-transform: uppercase;
     }
@@ -472,7 +471,7 @@
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;
-        line-height: 100%;
+        line-height: 1;
     }
 
     .faq-question-toggle {
@@ -495,7 +494,7 @@
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 400;
         font-size: 14px;
-        line-height: 100%;
+        line-height: 1;
         padding-bottom: 24px;
     }
 

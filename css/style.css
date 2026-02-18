@@ -397,7 +397,7 @@ nav {
 
     .lang-dropdown-item {
         font-family: "Inter", sans-serif;
-        line-height: normal;
+        line-height: 1;
     }
 
     .lang-text {
@@ -787,7 +787,7 @@ nav {
     }
 
     .lang-dropdown-item {
-        line-height: normal;
+        line-height: 1;
     }
 
     .lang-dropdown-icon {

@@ -182,7 +182,7 @@
     }
 
     .lang-dropdown-item {
-        line-height: normal;
+        line-height: 1;
     }
 
     .lang-dropdown-icon {
