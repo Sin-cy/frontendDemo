@@ -140,7 +140,8 @@ nav {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    height: 36px;
+    /* max-height: 36px; */
+    /* min-width: 506px;  */
     gap: 24px;
 }
 
@@ -360,6 +361,7 @@ nav {
         font-weight: 400;
     }
 
+    /* ---------- langugage list dropdown ----------- */
     .lang-dropdown-menu {
         left: -14px;
         top: calc(100% + 0px);
@@ -411,6 +413,8 @@ nav {
         opacity: 1;
     }
 
+    /* -------------- signin navbar ----------------- */
+
     .signin-shop-container {
         padding-right: 0;
         gap: 10px;
@@ -440,6 +444,8 @@ nav {
         background: transparent;
     }
 
+    /* --------- mobile navbar tabs icons --------- */
+
     .mobile-menu-toggle {
         -webkit-appearance: none;
         appearance: none;
@@ -449,8 +455,8 @@ nav {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 20px;
-        height: 8px;
+        /* width: 20px; */
+        /* height: 8px; */
         padding: 0;
         cursor: pointer;
         position: absolute;
@@ -495,13 +501,38 @@ nav {
         transform: rotate(-40deg);
     }
 
+    /* -------------- mobile navbar tabs ----------------- */
+
     .nav-tabs {
         display: none;
         width: 100%;
         flex-basis: 100%;
-        height: auto;
+        height: 800px;
         gap: 0;
         order: 3;
+    }
+
+    .nav-container.is-menu-open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1005;
+        background: #fff;
+    }
+
+    .nav-tabs .tab {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .nav-tabs .mobile-editorial-trigger {
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .nav-tabs .mobile-editorial-trigger:focus {
+        outline: none;
     }
 
     .nav-container.is-menu-open .nav-tabs {
@@ -510,18 +541,20 @@ nav {
         align-items: center;
         justify-content: flex-start;
         position: fixed;
-        top: 45px;
+        top: 44.5px;
         left: 0;
         right: 0;
-        gap: 23px;
-        height: auto;
+        height: 800px;
         min-height: calc(100dvh - 45px);
-        padding: 25px 0 24px;
         background: #ffffff;
         z-index: 1;
+
+        gap: 23.5px;
+        padding: 25px 0 5px 0;
     }
 
-    /* NOTE: mobile logo navbar dropdown */
+
+    /* NOTE: mobile main logo in navbar dropdown */
     .nav-container.is-menu-open .mobile-menu-bottom-logo {
         display: flex;
         justify-content: center;
@@ -572,8 +605,10 @@ nav {
         align-items: center;
         justify-content: flex-start;
         position: static;
+        pointer-events: none;
     }
 
+    /* ------------ mobile editorial dropdown ---------- */
     /* NOTE: mobile editorial dropdown behavior */
     .nav-tabs .tab {
         pointer-events: none;
@@ -722,7 +757,7 @@ nav {
         visibility: hidden;
     }
 
-    /* -----------  NOTE: editorial mobile ends here ----------- */
+    /* --------------------------- */
 
     .hero-bg {
         height: 100svh;
@@ -806,37 +841,6 @@ nav {
         transform: rotate(-38deg);
     }
 
-
-    /* TODO: Editorial Stuff Starts here for 390 support */
-
-    .nav-tabs .tab {
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .nav-tabs .mobile-editorial-trigger {
-        pointer-events: auto;
-        cursor: pointer;
-    }
-
-    .nav-container.is-menu-open .nav-tabs {
-        gap: 25px;
-        padding: 25px 0 0;
-        padding-bottom: 8px;
-        /* padding-bottom: max( */
-        /*     calc(52px + 8px), */
-        /*     calc(env(safe-area-inset-bottom) + 8px) */
-        /* ); */
-    }
-
 }
-
-/* @media (width <= 450px) {
-    .hero-bg {
-        height: 100dvh;
-        object-fit: cover;
-        object-position: center;
-    }
-} */
 
 

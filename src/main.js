@@ -161,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langList = document.querySelector('.lang-list')
     let isPageLocked = false
     let pausedVideos = []
+    let lockedScrollY = 0
 
     if (!navContainer || !mobileToggle || !navTabs) {
         return
@@ -171,10 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        document.documentElement.style.overflow = 'hidden'
-        document.documentElement.style.touchAction = 'none'
-        document.body.style.overflow = 'hidden'
-        document.body.style.touchAction = 'none'
+        lockedScrollY = window.scrollY
+        document.body.classList.add('menu-open')
+        document.body.style.top = `-${lockedScrollY}px`
         isPageLocked = true
     }
 
@@ -183,10 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        document.documentElement.style.overflow = ''
-        document.documentElement.style.touchAction = ''
-        document.body.style.overflow = ''
-        document.body.style.touchAction = ''
+        document.body.classList.remove('menu-open')
+        document.body.style.top = ''
+
+        const previousBehavior = document.documentElement.style.scrollBehavior
+        document.documentElement.style.scrollBehavior = 'auto'
+        window.scrollTo(0, lockedScrollY)
+        document.documentElement.style.scrollBehavior = previousBehavior
         isPageLocked = false
     }
 
@@ -216,9 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const openMobileMenu = () => {
+        lockPageScroll()
         navContainer.classList.add('is-menu-open')
         mobileToggle.setAttribute('aria-expanded', 'true')
-        lockPageScroll()
         pauseBackgroundVideos()
     }
 

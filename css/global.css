@@ -17,6 +17,16 @@ body {
     background: #ffffff;
 }
 
+
+body.menu-open {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  right: 0;
+  overscroll-behavior: none;
+}
+
 img, svg, video {
     display: block;
     max-width: 100%;
