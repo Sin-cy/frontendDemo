@@ -175,3 +175,27 @@
         padding: 0 27px 33px 24px;
     }
 }
+
+@media (width < 390px) {
+    .footer-subsection-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 16px;
+        padding: 32px 16px 0 16px;
+    }
+
+    .footer-subsection,
+    .footer-newsletter,
+    .footer-newsletter-container {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .email-input,
+    .subscribe-btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}

@@ -408,3 +408,18 @@
         text-align: center;
     }
 }
+
+@media (width < 390px) {
+    .new-item-container .txt-container,
+    .bestseller-container .txt-container {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .new-item-container .txt-desc,
+    .bestseller-container .txt-desc {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}

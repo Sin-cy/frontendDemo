@@ -499,3 +499,9 @@
     }
 
 }
+
+@media (width < 390px) {
+    .common-questions-wrapper {
+        padding: 0 22px 56px 22px;
+    }
+}
