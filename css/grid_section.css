@@ -118,7 +118,7 @@
     cursor: default;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (width >= 938px) and (hover: hover) and (pointer: fine) {
     /* Card 1: base image fades out to reveal hover video */
     .grid-card-top:hover .grid-media-base {
         opacity: 0;
@@ -287,4 +287,3 @@
     }
 
 }
-
