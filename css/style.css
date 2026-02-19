@@ -671,6 +671,7 @@ nav {
         transform: translateX(28px);
         transition: transform 0.1s ease-in, opacity 0.4s ease-out;
         transition-delay: 0.05s;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .nav-tabs .mobile-editorial-link {
@@ -681,13 +682,19 @@ nav {
         font-weight: 400;
         text-align: center;
         transform: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .nav-tabs .mobile-editorial-menu a,
-    .nav-tabs .mobile-editorial-menu a:hover {
+    .nav-tabs .mobile-editorial-menu a:hover,
+    .nav-tabs .mobile-editorial-menu a:active,
+    .nav-tabs .mobile-editorial-menu a:focus {
         transition: none;
         transform: none;
         filter: none;
+        background: transparent;
+        color: #000000;
+        outline: none;
     }
 
     .nav-tabs .mobile-editorial-dropdown.is-open-mobile .mobile-editorial-menu {
@@ -1100,6 +1107,7 @@ nav {
         transform: translateX(28px);
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
         transition-delay: 0.08s;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .nav-tabs .mobile-editorial-link {
@@ -1110,14 +1118,20 @@ nav {
         font-weight: 400;
         text-align: center;
         transform: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     /* NOTE: mobile editorial list items no tap/hover */
     .nav-tabs .mobile-editorial-menu a,
-    .nav-tabs .mobile-editorial-menu a:hover {
+    .nav-tabs .mobile-editorial-menu a:hover,
+    .nav-tabs .mobile-editorial-menu a:active,
+    .nav-tabs .mobile-editorial-menu a:focus {
         transition: none;
         transform: none;
         filter: none;
+        background: transparent;
+        color: #000000;
+        outline: none;
     }
 
     .nav-tabs .mobile-editorial-dropdown.is-open-mobile .mobile-editorial-menu {
