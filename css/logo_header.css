@@ -5,9 +5,9 @@
     justify-content: center;
     align-items: flex-start;
     position: fixed;
-    height: 215px;
     top: 0;
-    left: 0;
+    left: 0; 
+    height: 215px;
     width: 100%;
     z-index: 900;
     /* margin-top: 35px; */
@@ -50,16 +50,39 @@
 }
 
 
-@media (768px <= width <= 1136px) {
+@media (768px <= width <= 937px) {
     .header-container {
         height: 215px;
-        padding: 12px 20px 0 20px;
+        padding: 13px 7px 0 7px;
         margin-top: 15px;
     }
 
     .header-container.shrunk {
         height: 215px;
-        padding-top: 16px;
+        padding-top: 13px;
+    }
+
+    .header-container.shrunk .main-logo {
+        transform: scale(0.22);
+        transition: transform 0.7s ease-in;
+        transform-origin: top center;
+        filter: brightness(0) invert(1);
+        mix-blend-mode: difference;
+        margin-top: 20px;
+    }
+
+}
+
+@media (938px <= width <= 1136px) {
+    .header-container {
+        height: 215px;
+        padding: 12px 7px 0 7px;
+        margin-top: 15px;
+    }
+
+    .header-container.shrunk {
+        height: 215px;
+        padding-top: 12px;
     }
 
     .header-container.shrunk .main-logo {
@@ -76,13 +99,13 @@
 @media (481px <= width <= 767px) {
     .header-container {
         height: 215px;
-        padding: 16px 14px 0 14px;
+        padding: 15px 7px 0 7px;
         margin-top: 22px;
     }
 
     .header-container.shrunk {
         height: 215px;
-        padding-top: 16px;
+        padding-top: 15px;
     }
 
     .main-logo,
@@ -99,8 +122,7 @@
 
 @media (width <= 480px) {
     .header-container {
-        height: 215px;
-        padding: 16px 7px 0 7px;
+        height: 215px; padding: 16px 7px 0 7px;
         margin-top: 22px;
     }
 
@@ -121,6 +143,7 @@
 
 @media (width < 391px) {
     .header-container {
+        width: 100%;
         height: 215px;
         padding: 16px 7px 0 7px;
         margin-top: 22px;

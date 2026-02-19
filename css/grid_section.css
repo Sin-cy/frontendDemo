@@ -238,11 +238,11 @@
 
     .grid-card-2 .grid-base-track {
         /* w is left h is right */
-        width: 490px;
-        height: 490px;
+        width: 466px;
+        height: 464px;
 
-        left: calc(50% - 239px);
-        top: 0;
+        left: calc(50% - 228.5px);
+        top: -0.5px;
 
         right: auto;
         bottom: auto;
