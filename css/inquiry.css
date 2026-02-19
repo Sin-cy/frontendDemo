@@ -100,10 +100,10 @@
     width: 18px;
     height: 18px;
     margin: 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 0.75px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     background: #ffffff;
-    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 0.4px rgba(0, 0, 0, 0.2);
     position: relative;
     pointer-events: none;
 }
